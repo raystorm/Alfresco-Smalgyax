@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="smd:Smalgyax-Document"
+       xmlns="http://www.alfresco.org/model/dictionary/1.0">
+       
+    <!-- Optional meta-data about the model -->
+    <description>Smalgyax Document</description>
+    <author>Tom Burton</author>
+    
+    <imports>
+      <!-- Import Alfresco Dictionary Definitions -->
+      <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+      <!-- Import Alfresco Content Domain Model Definitions -->
+      <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+      <!-- Import Alfresco System Model Definitions -->
+      <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+    
+    <namespaces>
+       <namespace uri="http://www.github.com/raystorm/smalgyax/document/1.0" 
+                  prefix="smd"/>
+    </namespaces>
+    
+    <data-types/>
+    
+    <constraints/>
+    
+    <!-- ===============================================================================================================
+        Constraints, Types, and Aspects go here...
+        -->
+    
+    <types>
+    	<!--
+    		Smalgyax System Wide Document Root Type
+    	-->
+        <type name="smd:amwaal">
+            <title>Amwaal</title>
+            <description>Generic Type for Smalgyax files.
+            
+amwaal [am/*waal]
+Stem with modifying proclitic composed of: am=1  serving for, waal  do/be
+common noun. valuables; wealth</description>
+            <parent>cm:content</parent>
+            
+            <properties>
+                <property name="smd:nahawt">
+                  <title>nahawt</title>
+                  <description>Smalgyax Description of the file content
+
+Nahawt - Topic</description>
+                  <type>d:text</type>
+                  <mandatory>false</mandatory>
+                  <index enabled="true">
+                    <tokenised>TRUE</tokenised>
+                    <facetable>false</facetable>
+                  </index>
+                </property>
+                <property name="smd:magon">
+                  <title>magon</title>
+                  <description>Smalgyax Description of the file content
+magon (underline g) - explain</description>
+                  <type>d:text</type>
+                  <mandatory>false</mandatory>
+                  <index enabled="true">
+                    <tokenised>TRUE</tokenised>
+                    <facetable>false</facetable>
+                  </index>
+                </property>
+            </properties>
+            <associations/>
+            <overrides/>
+            <mandatory-aspects/>
+        </type>
+        <type name="smd:Template">
+            <title>Conversation Template</title>
+            <description>Conversation Templates</description>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="smd:Smalgyax-Topic">
+                    <title>Smalgyax-Topic</title>
+                    <description>The Conversation Topic in Smalgyax</description>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>TRUE</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="smd:Smalgyax-Description">
+                    <title>Smalgyax-Description</title>
+                    <description>Description of the File in Smalgyax</description>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>TRUE</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="smd:English-Topic">
+                    <title>English-Topic</title>
+                    <description>The Conversation Subject in English</description>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>TRUE</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+            </properties>
+            <associations/>
+            <overrides/>
+            <mandatory-aspects/>
+        </type>
+    </types>
+    <aspects>
+        <aspect name="smd:test">
+            <description>test</description>
+            <properties>
+                <property name="smd:TestAFiield">
+                    <title>Testing Aspect Field</title>
+                    <description>Testing 123</description>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>TRUE</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+            </properties>
+            <associations/>
+            <overrides/>
+            <mandatory-aspects/>
+        </aspect>
+    </aspects>
+</model>
