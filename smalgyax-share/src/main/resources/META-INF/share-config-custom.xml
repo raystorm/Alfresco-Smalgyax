@@ -452,6 +452,11 @@
                     </field>
                     <field id="cm:title">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                    </field>                    
+                    <field id="mimetype">
+                        <control template="/org/alfresco/components/form/controls/hidden.ftl">
+                            <control-param name="contextProperty">mimeType</control-param>
+                        </control>
                     </field>
                     <field id="cm:content" label-id="" mandatory="true">
 						    <constraint-handlers>
@@ -460,11 +465,6 @@
 						    </constraint-handlers>
                         <control template="/file.ftl">
                           <control-param name="editorAppearance">explorer</control-param>                      
-                        </control>
-                    </field>
-                    <field id="mimetype">
-                        <control template="/org/alfresco/components/form/controls/hidden.ftl">
-                            <control-param name="contextProperty">mimeType</control-param>
                         </control>
                     </field>
                     <field id="app:editInline">

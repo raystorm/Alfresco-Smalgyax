@@ -5,6 +5,11 @@
       <span class="viewmode-value">${field.value?html}</span>
     </div>
   <#else>
+    <label for="${fieldHtmlId}">
+      File to Be Uploaded:<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
+    </label>
+    <input id="${fieldHtmlId}" type="file" name="${field.name}"  
+           <#if field.disabled>disabled="true"</#if> />
     <script type="text/javascript" >
     if (Smalgyax === undefined || typeof Smalgyax == "undefined" || !Smalgyax) 
     {
@@ -125,12 +130,6 @@
        message = "Cannot add a file when one has not been provided.";
        return false;
     }
-     
     </script>
-    <label for="${fieldHtmlId}">
-      File to Be Uploaded:<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
-    </label>
-    <input id="${fieldHtmlId}" type="file" name="${field.name}"  
-           <#if field.disabled>disabled="true"</#if> />
   </#if>
 </div>
