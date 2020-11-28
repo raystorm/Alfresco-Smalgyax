@@ -5,11 +5,35 @@
       <span class="viewmode-value">${field.value?html}</span>
     </div>
   <#else>
-    <label for="${fieldHtmlId}">
+    <script type="text/javascript" src="/share/res/components/upload/dnd-upload.js"></script>
+    <script type="text/javascript" src="/share/res/components/upload/file-upload.js"></script>
+    <div id="${fieldHtmlId}-controls" class="browse-wrapper">
+    <div class="center dnd-file-selection-control">
+    <span class="yui-button yui-push-button alf-primary-button" 
+          id="${fieldHtmlId}-button-overlay">
+	   <span class="first-child dnd-file-selection-button-overlay-wrapper">
+	     <button type="button" tabindex="0" id="${fieldHtmlId}-button-overlay-wrapper" 
+	             class="dnd-file-selection-button-overlay">
+	       Select file to upload<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
+	     </button>
+	     <input type="file" multiple="" name="files[]" class="dnd-file-selection-button"
+	            <#if field.disabled>disabled="true"</#if> >
+	   </span>
+    </span>
+    </div>
+    </div>
+    </div>
+    <div id="${fieldHtmlId}-filelist-table" 
+         class="fileUpload-filelist-table yui-dt yui-dt-scrollable hidden">
+    </div>
+    <!--
+    <label for="fieldHtmlId">
       File to Be Uploaded:<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
-    </label>
-    <input id="${fieldHtmlId}" type="file" name="${field.name}"  
-           <#if field.disabled>disabled="true"</#if> />
+    </label>    
+    <input id="fieldHtmlId" type="file" name="${field.name}"  
+           class="dnd-file-selection-button" 
+           < # i f field.disabled>disabled="true" < / # i f > />
+    -->
     <script type="text/javascript" >
     if (Smalgyax === undefined || typeof Smalgyax == "undefined" || !Smalgyax) 
     {
@@ -93,7 +117,8 @@
        "use strict";
        
        var form = Smalgyax.forms.helpers.findCreationForm();
-       var contentField = Smalgyax.forms.helpers.findInput(form, "cm_content");
+       //var contentField = Smalgyax.forms.helpers.findInput(form, "cm_content");
+       var contentField = Smalgyax.forms.helpers.findInput(form, "files[]");
        contentField.onchange = Smalgyax.forms.event.onChangeEvent;
     }
     
@@ -130,6 +155,63 @@
        message = "Cannot add a file when one has not been provided.";
        return false;
     }
+     
+
+    /*
+     * var dndUpload = Alfresco.component.getDNDUploadInstance();
+     * var multiUploadConfig =
+     * {
+     *    files: files,
+     *    destination: destination,
+     *    siteId: siteId,
+     *    containerId: doclibContainerId,
+     *    path: docLibUploadPath,
+     *    filter: [],
+     *    mode: flashUpload.MODE_MULTI_UPLOAD,
+     * }
+     * dndUpload.show(multiUploadConfig);
+     */
+     
+     /*
+     var dndUpload = Alfresco.component.getDNDUploadInstance();
+     var fileToUpload = 
+    	   {
+    		   files: document.getElementById("${fieldHtmlId}").files,
+    		   //destination: 
+    			//siteId: 
+    			//containerId: 
+    			//path: 
+    			filter: [], 
+    			mode: flashUpload.MODE_SINGLE_UPLOAD,
+    	   };
+     dndUpload.show(fileToUpload);
+     */
+     
+    /*
+     * var fileUpload = Alfresco.getFileUploadInstance();
+     * var multiUploadConfig =
+     * {
+     *    siteId: siteId,
+     *    containerId: doclibContainerId,
+     *    path: docLibUploadPath,
+     *    filter: [],
+     *    mode: fileUpload.MODE_MULTI_UPLOAD,
+     * }
+     * this.fileUpload.show(multiUploadConfig);
+     */
+     
+     //var fileUpload = Alfresco.getFileUploadInstance();
+     var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-button-overlay");
+     var uploadConfig =
+     {
+        //siteId: siteId,
+        //containerId: doclibContainerId,
+        //path: docLibUploadPath,
+        destination: '${form.destination}',
+        filter: [],
+        mode: fileUpload.MODE_SINLGLE_UPLOAD,
+     }
+     fileUpload.show(uploadConfig);
     </script>
   </#if>
 </div>
