@@ -7,24 +7,74 @@
   <#else>
     <script type="text/javascript" src="/share/res/components/upload/dnd-upload.js"></script>
     <script type="text/javascript" src="/share/res/components/upload/file-upload.js"></script>
-    <div id="${fieldHtmlId}-controls" class="browse-wrapper">
-    <div class="center dnd-file-selection-control">
-    <span class="yui-button yui-push-button alf-primary-button" 
-          id="${fieldHtmlId}-button-overlay">
-	   <span class="first-child dnd-file-selection-button-overlay-wrapper">
-	     <button type="button" tabindex="0" id="${fieldHtmlId}-button-overlay-wrapper" 
-	             class="dnd-file-selection-button-overlay">
-	       Select file to upload<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
-	     </button>
-	     <input type="file" multiple="" name="files[]" class="dnd-file-selection-button"
-	            <#if field.disabled>disabled="true"</#if> >
-	   </span>
-    </span>
-    </div>
-    </div>
-    </div>
+    <div class="bd" >
+	   <div id="${fieldHtmlId}-controls" class="browse-wrapper">
+		  <div class="center dnd-file-selection-control">
+		    <span class="yui-button yui-push-button alf-primary-button" 
+		          id="${fieldHtmlId}-button-overlay">
+			   <span class="first-child dnd-file-selection-button-overlay-wrapper">
+			     <button type="button" tabindex="0" id="${fieldHtmlId}-button-overlay-wrapper" 
+			             class="dnd-file-selection-button-overlay">
+			       Select file to upload<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
+			     </button>
+			     <input type="file" multiple="" name="files[]" class="dnd-file-selection-button"
+			            <#if field.disabled>disabled="true"</#if> >
+			   </span>
+		    </span>
+	     </div>
+	   </div>
     <div id="${fieldHtmlId}-filelist-table" 
-         class="fileUpload-filelist-table yui-dt yui-dt-scrollable hidden">
+         class="fileUpload-filelist-table yui-dt yui-dt-scrollable hidden">      
+      <div class="yui-dt-mask" style="display: none;"></div>
+      <div style="width: 620px; background-color: rgb(242, 242, 242);" 
+           class="yui-dt-hd">
+        <table>
+          <colgroup><col><col><col></colgroup>
+          <thead style="">
+            <tr class="yui-dt-first yui-dt-last">
+              <th id="yui-dt46-fixedth-id" 
+                  rowspan="1" colspan="1" class="col-left yui-dt46-col-id yui-dt-col-id">
+                <div id="yui-dt46-th-id-liner" class="yui-dt-liner">
+                  <span class="yui-dt-label">id</span>
+                </div>
+              </th>
+              <th id="yui-dt46-fixedth-name" rowspan="1" colspan="1" 
+                  class="col-center yui-dt46-col-name yui-dt-col-name">
+                <div id="yui-dt46-th-name-liner" class="yui-dt-liner">
+                  <span class="yui-dt-label">name</span>
+                </div>
+              </th>
+              <th id="yui-dt46-fixedth-created" rowspan="1" colspan="1" 
+                  class="col-right yui-dt46-col-created yui-dt-col-created" 
+                  style="border-right: 1px solid rgb(242, 242, 242);">
+                <div id="yui-dt46-th-created-liner" class="yui-dt-liner">
+                  <span class="yui-dt-label">created</span>
+                </div>
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div style="width: 620px; height: 204px;" class="yui-dt-bd">
+        <table summary="" style="margin-top: 0px; width: 155px;">
+          <thead>
+            <tr>
+              <th id="yui-dt46-th-id" rowspan="1" colspan="1" class="yui-dt-first">id</th>
+              <th id="yui-dt46-th-name" rowspan="1" colspan="1">name</th>
+              <th id="yui-dt46-th-created" rowspan="1" colspan="1" class="yui-dt-last">created</th>
+            </tr>
+          </thead>
+          <tbody class="yui-dt-message" style="">
+            <tr class="yui-dt-first yui-dt-last">
+              <td colspan="3" class="yui-dt-first yui-dt-last">
+                <div class="yui-dt-liner yui-dt-loading yui-dt-empty">Loading files into memory, please wait...</div>
+              </td>
+            </tr>
+          </tbody>
+          <tbody tabindex="0" class="yui-dt-data"></tbody>
+        </table>
+      </div>
+    </div>
     </div>
     <!--
     <label for="fieldHtmlId">
