@@ -17,7 +17,8 @@
 			             class="dnd-file-selection-button-overlay">
 			       Select file to upload<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
 			     </button>
-			     <input type="file" multiple="" name="files[]" class="dnd-file-selection-button"
+			     <input id="${fieldHtmlId}" type="file" multiple="" name="files[]"			             
+			            class="dnd-file-selection-button"
 			            <#if field.disabled>disabled="true"</#if> >
 			   </span>
 		    </span>
@@ -74,6 +75,37 @@
           <tbody tabindex="0" class="yui-dt-data"></tbody>
         </table>
       </div>
+    </div>
+    <div style="display:none">
+      <div id="${fieldHtmlId}-left-div" class="fileupload-left-div">
+        <span class="fileupload-percentage-span">0%</span>
+        <input class="fileupload-contentType-input" type="hidden" value="cm:content">
+      </div>
+      <div id="${fieldHtmlId}-center-div" class="fileupload-center-div">
+        <span class="fileupload-progressSuccess-span">&nbsp;</span>
+        <img src="/share/res/components/images/generic-file-32.png" 
+             class="fileupload-docImage-img" alt="file">
+        <span class="fileupload-progressInfo-span"></span>
+        <span class="fileupload-filesize-span"></span>
+      </div>
+      <div id="${fieldHtmlId}-right-div" class="fileupload-right-div">
+        <img src="/share/res/components/images/job-running-16.png" 
+             class="fileupload-status-img" alt="status-running">
+        <img src="/share/res/components/images/complete-16.png" 
+             class="fileupload-status-img hidden" alt="status-complete">
+        <img src="/share/res/components/images/job-failed-16.png" 
+             class="fileupload-status-img hidden" alt="status-failed">
+      </div>
+    </div>
+    <div class="bdft" >
+      <span id="${fieldHtmlId}-upload-button"
+            class="yui-button yui-push-button alf-primary-button hidden 
+                  yui-button-disabled yui-push-button-disabled" >
+        <span class="first-child">
+          <button id="${fieldHtmlId}-upload-button-button" 
+                  type="button" tabindex="0" disabled="disabled">Upload</button>
+        </span>
+      </span>
     </div>
     </div>
     <!--
@@ -251,10 +283,12 @@
      */
      
      //var fileUpload = Alfresco.getFileUploadInstance();
-     var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-button-overlay");
+     //var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-button-overlay");
+     var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}");     
+     //var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-controls");
      var uploadConfig =
      {
-        //siteId: siteId,
+        //siteId: 'siteshome',
         //containerId: doclibContainerId,
         //path: docLibUploadPath,
         destination: '${form.destination}',
@@ -262,6 +296,7 @@
         mode: fileUpload.MODE_SINLGLE_UPLOAD,
      }
      fileUpload.show(uploadConfig);
+     
     </script>
   </#if>
 </div>
