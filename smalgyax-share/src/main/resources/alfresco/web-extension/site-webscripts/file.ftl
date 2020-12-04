@@ -17,10 +17,11 @@
 			             type="button" tabindex="0" class="dnd-file-selection-button-overlay">
 			       Select file to upload<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
 			     </button>
-			     <input id="${fieldHtmlId}" type="file" multiple="" name="files[]"			             
+			     <input id="${fieldHtmlId}" type="file" multiple="" 			             
 			            class="dnd-file-selection-button"
 			            <#if field.disabled>disabled="true"</#if> >
 			   </span>
+			   <!-- name="files[]" -->
 		    </span>
 	     </div>
 	   </div>
@@ -192,6 +193,13 @@
                   type="button" tabindex="0" disabled="disabled">Upload</button>
         </span>
       </span>
+      <span id="${fieldHtmlId}-cancelOk-button"
+            class="yui-button yui-push-button">
+        <span class="first-child">
+          <button id="${fieldHtmlId}-cancelOk-button-button" 
+                  type="button" tabindex="0">Cancel</button>
+        </span>
+      </span>
     </div>
     </div>
     <!--
@@ -203,15 +211,77 @@
            < # i f field.disabled>disabled="true" < / # i f > />
     -->
     <script type="text/javascript" >
+    
+
+    
+
+    /*
+     * var dndUpload = Alfresco.component.getDNDUploadInstance();
+     * var multiUploadConfig =
+     * {
+     *    files: files,
+     *    destination: destination,
+     *    siteId: siteId,
+     *    containerId: doclibContainerId,
+     *    path: docLibUploadPath,
+     *    filter: [],
+     *    mode: flashUpload.MODE_MULTI_UPLOAD,
+     * }
+     * dndUpload.show(multiUploadConfig);
+     */
+     
+     /*
+     var dndUpload = Alfresco.component.getDNDUploadInstance();
+     var fileToUpload = 
+         {
+            files: document.getElementById("${fieldHtmlId}").files,
+            //destination: 
+            //siteId: 
+            //containerId: 
+            //path: 
+            filter: [], 
+            mode: flashUpload.MODE_SINGLE_UPLOAD,
+         };
+     dndUpload.show(fileToUpload);
+     */
+     
+    /*
+     * var fileUpload = Alfresco.getFileUploadInstance();
+     * var multiUploadConfig =
+     * {
+     *    siteId: siteId,
+     *    containerId: doclibContainerId,
+     *    path: docLibUploadPath,
+     *    filter: [],
+     *    mode: fileUpload.MODE_MULTI_UPLOAD,
+     * }
+     * this.fileUpload.show(multiUploadConfig);
+     */
+     
+     //var fileUpload = Alfresco.getFileUploadInstance();
+     //var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-button-overlay");
+     var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}");     
+     //var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-controls");
+     var uploadConfig =
+     {
+        //siteId: 'siteshome',
+        //containerId: doclibContainerId,
+        //path: docLibUploadPath,
+        destination: '${form.destination}',
+        filter: [],
+        mode: fileUpload.MODE_SINLGLE_UPLOAD,
+     }
+     fileUpload.show(uploadConfig);
+    
     if (Smalgyax === undefined || typeof Smalgyax == "undefined" || !Smalgyax) 
     {
-        //TODO: prototype syntax
-        var Smalgyax = {};
-        Smalgyax.forms = {};
-        Smalgyax.forms.prepare = {};
-        Smalgyax.forms.helpers = {};
-        Smalgyax.forms.event = {};
-        Smalgyax.forms.validation = {};
+       //TODO: prototype syntax
+       var Smalgyax = {};
+       Smalgyax.forms = {};
+       Smalgyax.forms.prepare = {};
+       Smalgyax.forms.helpers = {};
+       Smalgyax.forms.event = {};
+       Smalgyax.forms.validation = {};
     }
 
     /** Helper function to find the creation form */
@@ -224,8 +294,7 @@
        for (fi = 0; fi < document.forms.length; ++fi) 
        {
           form = document.forms[fi];
-          if (form.id.includes("create-content")) 
-          { return form; }
+          if (form.id.includes("create-content")) { return form; }
        }
     }
     
@@ -242,6 +311,21 @@
        //find cm:name
        for (i = 0; i < form.elements.length; ++i) 
        { if (form.elements[i].name.includes(name)) { return form.elements[i]; } }
+    }
+     
+    /** 
+     * Helper function to find the needed input element on the form
+     * @param form {HTMLFormElement} The forms runtime class instance the field is being managed by
+     * @param inputName {String} part of the name element of the needed input element
+     */
+    Smalgyax.forms.helpers.findFileField = function findFileField(form)
+    {
+       "use strict";
+       
+       var i = 0;
+       //find cm:name
+       for (i = 0; i < form.elements.length; ++i) 
+       { if (form.elements[i].type == "file" ) { return form.elements[i]; } }
     }
     
     /**
@@ -286,6 +370,7 @@
        
        var form = Smalgyax.forms.helpers.findCreationForm();
        //var contentField = Smalgyax.forms.helpers.findInput(form, "cm_content");
+       //var contentField = Smalgyax.forms.helpers.findInput(form, "files[]");
        var contentField = Smalgyax.forms.helpers.findInput(form, "files[]");
        contentField.onchange = Smalgyax.forms.event.onChangeEvent;
     }
@@ -323,65 +408,6 @@
        message = "Cannot add a file when one has not been provided.";
        return false;
     }
-     
-
-    /*
-     * var dndUpload = Alfresco.component.getDNDUploadInstance();
-     * var multiUploadConfig =
-     * {
-     *    files: files,
-     *    destination: destination,
-     *    siteId: siteId,
-     *    containerId: doclibContainerId,
-     *    path: docLibUploadPath,
-     *    filter: [],
-     *    mode: flashUpload.MODE_MULTI_UPLOAD,
-     * }
-     * dndUpload.show(multiUploadConfig);
-     */
-     
-     /*
-     var dndUpload = Alfresco.component.getDNDUploadInstance();
-     var fileToUpload = 
-    	   {
-    		   files: document.getElementById("${fieldHtmlId}").files,
-    		   //destination: 
-    			//siteId: 
-    			//containerId: 
-    			//path: 
-    			filter: [], 
-    			mode: flashUpload.MODE_SINGLE_UPLOAD,
-    	   };
-     dndUpload.show(fileToUpload);
-     */
-     
-    /*
-     * var fileUpload = Alfresco.getFileUploadInstance();
-     * var multiUploadConfig =
-     * {
-     *    siteId: siteId,
-     *    containerId: doclibContainerId,
-     *    path: docLibUploadPath,
-     *    filter: [],
-     *    mode: fileUpload.MODE_MULTI_UPLOAD,
-     * }
-     * this.fileUpload.show(multiUploadConfig);
-     */
-     
-     //var fileUpload = Alfresco.getFileUploadInstance();
-     //var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-button-overlay");
-     var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}");     
-     //var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-controls");
-     var uploadConfig =
-     {
-        //siteId: 'siteshome',
-        //containerId: doclibContainerId,
-        //path: docLibUploadPath,
-        destination: '${form.destination}',
-        filter: [],
-        mode: fileUpload.MODE_SINLGLE_UPLOAD,
-     }
-     fileUpload.show(uploadConfig);
      
     </script>
   </#if>
