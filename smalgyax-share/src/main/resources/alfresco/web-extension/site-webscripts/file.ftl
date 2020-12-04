@@ -17,9 +17,11 @@
 			             type="button" tabindex="0" class="dnd-file-selection-button-overlay">
 			       Select file to upload<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
 			     </button>
-			     <input id="${fieldHtmlId}" type="file" multiple="" 			             
+			     <!-- 
+			     <input id="${fieldHtmlId}" type="file" multiple=""
 			            class="dnd-file-selection-button"
 			            <#if field.disabled>disabled="true"</#if> >
+			     -->
 			   </span>
 			   <!-- name="files[]" -->
 		    </span>
@@ -69,7 +71,9 @@
           <tbody class="yui-dt-message" style="">
             <tr class="yui-dt-first yui-dt-last">
               <td colspan="3" class="yui-dt-first yui-dt-last">
-                <div class="yui-dt-liner yui-dt-loading yui-dt-empty">Loading files into memory, please wait...</div>
+                <div class="yui-dt-liner yui-dt-loading yui-dt-empty">
+                  Loading files into memory, please wait...
+                </div>
               </td>
             </tr>
           </tbody>
@@ -210,10 +214,7 @@
            class="dnd-file-selection-button" 
            < # i f field.disabled>disabled="true" < / # i f > />
     -->
-    <script type="text/javascript" >
-    
-
-    
+    <script type="text/javascript" >    
 
     /*
      * var dndUpload = Alfresco.component.getDNDUploadInstance();
