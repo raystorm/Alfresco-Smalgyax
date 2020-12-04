@@ -8,13 +8,13 @@
     <script type="text/javascript" src="/share/res/components/upload/dnd-upload.js"></script>
     <script type="text/javascript" src="/share/res/components/upload/file-upload.js"></script>
     <div class="bd" >
-	   <div id="${fieldHtmlId}-controls" class="browse-wrapper">
+	   <div id="${fieldHtmlId}-file-selection-controls" class="browse-wrapper">
 		  <div class="center dnd-file-selection-control">
 		    <span class="yui-button yui-push-button alf-primary-button" 
-		          id="${fieldHtmlId}-button-overlay">
+		          id="${fieldHtmlId}-file-selection-button-overlay">
 			   <span class="first-child dnd-file-selection-button-overlay-wrapper">
-			     <button type="button" tabindex="0" id="${fieldHtmlId}-button-overlay-wrapper" 
-			             class="dnd-file-selection-button-overlay">
+			     <button id="${fieldHtmlId}-file-selection-button-overlay-wrapper"
+			             type="button" tabindex="0" class="dnd-file-selection-button-overlay">
 			       Select file to upload<#if field.mandatory><span class="mandatory-indicator">*</span></#if>
 			     </button>
 			     <input id="${fieldHtmlId}" type="file" multiple="" name="files[]"			             
@@ -75,6 +75,92 @@
           <tbody tabindex="0" class="yui-dt-data"></tbody>
         </table>
       </div>
+    </div>
+    <div class="status-wrapper">
+      <span id="${fieldHtmlId}-status-span" class="status">&nbsp;</span>
+    </div>
+    <div id="${fieldHtmlId}-versionSection-div" class="hidden">
+      <div id="${fieldHtmlId}-compare-versions" class="hidden compare-versions">
+         <div class="header">
+              <div class="element"><h3>Current File</h3></div>
+              <div class="element"><h3>New File</h3></div>
+         </div>
+         <div class="current-version element">
+            <div class="details">
+               <div>
+                  <span>Current version:</span>
+                  <span class="prop-value" id="${fieldHtmlId}-current-version-value"></span>
+               </div>
+               <div>
+                  <span>Filename:</span>
+                  <span class="prop-value" id="${fieldHtmlId}-current-version-filename"></span>
+               </div>
+               <div>
+                  <span>Title:</span>
+                  <span class="prop-value" id="${fieldHtmlId}-current-version-title"></span>
+               </div>
+               <div>
+                  <span>Mimetype:</span>
+                  <span class="prop-value" id="${fieldHtmlId}-current-version-mimetype"></span>
+               </div>
+               <div>
+                  <span>Last modified:</span>
+                  <span class="prop-value" id="${fieldHtmlId}-current-version-last-modified"></span>
+               </div>
+               <div>
+                  <span>Modified by:</span>
+                  <span class="prop-value" id="${fieldHtmlId}-current-version-modified-by"></span>
+               </div>
+            </div>
+            <span>
+            <img id="${fieldHtmlId}-current-version-icon">
+            </span>
+         </div>
+          <div class="new-version element">
+             <div class="details">
+                <div class="">
+                   <span>Filename:</span>
+                   <span class="prop-value" id="${fieldHtmlId}-new-version-filename"></span>
+                </div>
+                <div>
+                   <span>Mimetype:</span>
+                   <span class="prop-value" id="${fieldHtmlId}-new-version-mimetype"></span>
+                </div>
+             </div>
+             <span>
+             <img id="${fieldHtmlId}-new-version-icon">
+             </span>
+          </div>
+       </div>
+       <div class="yui-g">
+          <h2>New Version Information</h2>
+       </div>
+       <div class="yui-gd">
+          <div class="yui-u first">
+             <span>This version has:</span>
+          </div>
+          <div class="yui-u">
+             <input id="${fieldHtmlId}-minorVersion-radioButton" type="radio" name="majorVersion" checked="checked" tabindex="0">
+             <label for="${fieldHtmlId}-minorVersion-radioButton" 
+                    id="${fieldHtmlId}-minorVersion">minor changes</label>
+          </div>
+       </div>
+       <div class="yui-gd">
+          <div class="yui-u first">&nbsp;
+          </div>
+          <div class="yui-u">
+             <input id="${fieldHtmlId}-majorVersion-radioButton" type="radio" name="majorVersion" tabindex="0">
+             <label for="${fieldHtmlId}-majorVersion-radioButton" id="template_x002e_dnd-upload_x002e_sharedfiles_x0023_default-majorVersion">major changes</label>
+          </div>
+       </div>
+       <div class="yui-gd">
+          <div class="yui-u first">
+             <label for="${fieldHtmlId}-description-textarea">Comments</label>
+          </div>
+          <div class="yui-u">
+             <textarea id="${fieldHtmlId}-description-textarea" name="description" cols="80" rows="4" tabindex="0"></textarea>
+          </div>
+       </div>
     </div>
     <div style="display:none">
       <div id="${fieldHtmlId}-left-div" class="fileupload-left-div">
