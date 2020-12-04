@@ -428,6 +428,10 @@
             <dependencies>
               <js src="/set-name-field.js"/>
             </dependencies>
+            <!-- 
+                 TODO: change form action to submit to a custom service URL/JSON
+                 paramaters or form template?
+             -->
             <form submitType="multipart">
                 <field-visibility>
                     <show id="cm:name"/>
