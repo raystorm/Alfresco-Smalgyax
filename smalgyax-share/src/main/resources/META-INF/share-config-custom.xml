@@ -432,21 +432,23 @@
                  TODO: change form action to submit to a custom service URL/JSON
                  paramaters or form template?
              -->
-            <form submitType="multipart">
+            <form submit-type="multipart/form-data" enctype="multipart/form-data" 
+                  submission-url="/alfresco/service/hayts" >
+                  <!-- <create-form></create-form> -->
                 <field-visibility>
-                    <show id="cm:name"/>
-                    <show id="cm:content"     force="true" />
-                    <show id="cm:title"       force="true"/>
-                    <show id="cm:description" force="true"/>
-                    <show id="mimetype"/>
-                    <show id="app:editInline" force="true"/>
+                  <show id="cm:name"/>
+                  <show id="cm:content"     force="true" />
+                  <show id="cm:title"       force="true"/>
+                  <show id="cm:description" force="true"/>
+                  <show id="mimetype"/>
+                  <show id="app:editInline" force="true"/>
 
-                    <!-- ACME custom props
-                    <show id="acme:documentId" force="true"/>
-                    <show id="acme:securityClassification"/>
-                    -->
-                    <show id="smd:nahawt" force="true"/>
-                    <show id="smd:magon"  force="true"/>
+                  <!-- ACME custom props
+                  <show id="acme:documentId" force="true"/>
+                  <show id="acme:securityClassification"/>
+                  -->
+                  <show id="smd:nahawt" force="true"/>
+                  <show id="smd:magon"  force="true"/>
                 </field-visibility>
                 <appearance>
                     <field id="cm:name" >

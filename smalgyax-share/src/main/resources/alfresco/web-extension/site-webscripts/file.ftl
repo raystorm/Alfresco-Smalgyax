@@ -261,7 +261,7 @@
      
      //var fileUpload = Alfresco.getFileUploadInstance();
      //var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-button-overlay");
-     var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}");     
+     var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}");
      //var fileUpload = new Alfresco.DNDUpload("${fieldHtmlId}-controls");
      var uploadConfig =
      {
