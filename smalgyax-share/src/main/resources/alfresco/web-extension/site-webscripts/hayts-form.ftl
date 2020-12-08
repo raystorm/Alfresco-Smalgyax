@@ -8,22 +8,21 @@
    <#assign formUI><#if args.formUI??>${args.formUI}<#else>true</#if></#assign>
 
    <#if formUI == "true">
-      <@formLib.renderFormsRuntime formId=formId />
+     <@formLib.renderFormsRuntime formId=formId />
    </#if>
    
    <div id="${formId}-container" class="form-container">
       
-      <#if form.showCaption?exists && form.showCaption>
-        <div id="${formId}-caption" class="caption">
-          <span class="mandatory-indicator">*</span>${msg("form.required.fields")}
-        </div>
-      </#if>
+     <#if form.showCaption?exists && form.showCaption>
+       <div id="${formId}-caption" class="caption">
+         <span class="mandatory-indicator">*</span>${msg("form.required.fields")}
+       </div>
+     </#if>
          
-      <#if form.mode != "view">
-         <form id="${formId}" method="${form.method}" accept-charset="utf-8" 
-               enctype="${form.enctype}" 
-               action="${form.submissionUrl}">
-      </#if>
+     <#if form.mode != "view">
+       <form id="${formId}" enctype="multipart/form-data" accept-charset="utf-8" 
+            method="${form.method}" action="/alfresco/service/hayts">
+     </#if>
       
       <div id="${formId}-fields" class="form-fields"> 
         <#list form.items as item>

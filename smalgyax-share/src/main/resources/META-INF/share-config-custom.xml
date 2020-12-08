@@ -433,8 +433,8 @@
                  paramaters or form template?
              -->
             <form submit-type="multipart/form-data" enctype="multipart/form-data" 
-                  submission-url="/alfresco/service/hayts" >
-                  <!-- <create-form></create-form> -->
+                  submission-url="/share/service/hayts" >
+                <create-form template="/hayts-form.ftl" ></create-form> 
                 <field-visibility>
                   <show id="cm:name"/>
                   <show id="cm:content"     force="true" />
