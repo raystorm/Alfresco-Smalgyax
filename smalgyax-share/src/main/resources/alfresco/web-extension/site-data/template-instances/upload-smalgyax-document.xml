@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template-instance>
-    <template-type>org/alfresco/tutorials/helloworld/helloworldhome</template-type>
+  <!-- 
+  <template-type>com/github/raystorm/upload-smalgyax-document.xml</template-type>
+  -->
+  <template-type>upload-smalgyax-document.xml</template-type>
 </template-instance>

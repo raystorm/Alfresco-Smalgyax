@@ -564,5 +564,11 @@
             </form>
         </forms>
     </config>
+    
+    <config evaluator="string-compare" condition="SitePages">
+      <pages>
+        <page id="upload-smalgyax-document">upload-smalgyax-document</page>
+      </pages>
+    </config>
 
 </alfresco-config>

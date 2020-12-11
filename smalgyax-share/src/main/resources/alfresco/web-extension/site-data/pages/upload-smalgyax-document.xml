@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page>
   <title>Amwaal - Upload Smalgyax Document</title>
-  <title-id>Amwaal - Upload Smalgyax Document</title-id>
+  <title-id>Upload-Smalgyax-Document</title-id>
   <description>Upload Smalgyax Document</description>
   <description-id>Upload a new Smalgyax Document into Artifactory.</description-id>
   <template-instance>upload-smalgyax-document</template-instance>
