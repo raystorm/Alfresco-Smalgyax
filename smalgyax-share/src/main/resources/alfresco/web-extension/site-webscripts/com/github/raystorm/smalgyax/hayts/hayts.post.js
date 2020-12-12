@@ -31,6 +31,26 @@ if (file.filename == "")
 }
 else
 {
+   //import/create companyhome
+   importClass(Packages.org.springframework.web.context.ContextLoader);
+   //importClass(Packages.org.alfresco.service.cmr.repository.NodeService);
+   //importClass(Packages.org.alfresco.repo.jscript.ScriptNode);
+   //importClass(Packages.org.alfresco.service.cmr.repository.NodeRef);
+   var ctx = ContextLoader.getCurrentWebApplicationContext();
+   /*
+   var s = ctx.getBean("NodeService", org.alfresco.service.cmr.repository.NodeService);
+   var stores = s.getStores().toArray();
+   var storesNames = [];
+   for (i = 0; i < stores.length; i++) {
+       storesNames[i] = stores[i].protocol;
+   }
+   model.stores = storesNames;
+   */
+   //var companyhome = ctx.getBean("companyhome", 
+   //                               org.alfresco.repo.jscript.ScriptNode);
+   
+   var companyhome = ctx.getBean("companyhome");   
+   
    // create document in company home from uploaded file
    upload = companyhome.createFile(file.filename, type);
    upload.properties.content.guessMimetype(file.filename);
