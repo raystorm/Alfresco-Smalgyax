@@ -11,6 +11,12 @@
           <create-content>
             <content id="smd-file" icon="text" type="pagelink"
                      label="create.smdamwaal.menu.item.label" >
+              <param name="page">/share/page/upload-smalgyax-document</param>
+            </content>
+          </create-content>
+          <create-content>
+            <content id="smd-file" icon="text" type="pagelink"
+                     label="create.smdamwaal.menu.item.label" >
               <param name="page">create-content?destination={nodeRef}&amp;itemId=smd:amwaal</param>
             </content>
           </create-content>

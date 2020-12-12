@@ -3,5 +3,5 @@
   <!-- 
   <template-type>com/github/raystorm/upload-smalgyax-document.xml</template-type>
   -->
-  <template-type>upload-smalgyax-document.xml</template-type>
+  <template-type>com/github/raystorm/upload-smalgyax-document.ftl</template-type>
 </template-instance>
