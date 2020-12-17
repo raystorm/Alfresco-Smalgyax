@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template-instance>
-  <!-- 
-  <template-type>com/github/raystorm/upload-smalgyax-document.xml</template-type>
-  -->
   <template-type>com/github/raystorm/upload-smalgyax-document.ftl</template-type>
 </template-instance>

@@ -33,12 +33,12 @@
             enctype="multipart/form-data" > 
             <!--  action="/share/service/hayts" > -->
       
-         <!--
+         <!-- TODO: pass file destination
          <input id="form-destination" name="alf_destination" type="hidden" 
                 value=" $ { form.destination?html } " />
          <input id="form-redirect" name="alf_redirect" type="hidden" 
                 value=" $ { form.redirect?html } " />
-         -->
+         -->         
          <div id="formId-fields" class="form-fields">
             <div id="${formId}-fields" class="form-fields">
             File: <input type="file" name="file" /><br/>

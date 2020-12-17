@@ -1,6 +1,0 @@
-<webscript>
-  <shortname>File Upload with Metadata</shortname>
-  <description>Handling of multipart/form-data requests.</description>
-  <url>/multipart</url>
-  <authentication>user</authentication>
-</webscript>

@@ -1,6 +1,0 @@
-<webscript>
-  <shortname>Upload File with Fields</shortname>
-  <description>Form to upload file with Metadata</description>
-  <url>/hayts</url>
-  <authentication>user</authentication>
-</webscript>

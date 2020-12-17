@@ -103,8 +103,9 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
           type: 'POST',
           data: documentData,
           cache: false,
-          //contentType: false,
-          contentType: 'multipart/form-data',
+          enctype: 'multipart/form-data',
+          contentType: false,
+          //contentType: 'multipart/form-data',
           processData: false,
           success: function (response) 
           { alert("Document uploaded successfully. " + response); }
@@ -131,4 +132,4 @@ Smalgyax.forms.prepare.addEventHandler = function addEventHandler()
 }
 
 //TODO: replace with DOM manipulation
-alert("Smalgyax JS loaded.");
+//alert("Smalgyax JS loaded.");

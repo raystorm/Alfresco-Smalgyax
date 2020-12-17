@@ -4,21 +4,14 @@ var description = args.description;
 
 // extract file
 var file = null;
-var type = null;
+var type = "smd:amwaal";
 var firstFound = false;
 for each (field in formdata.fields)
 {
    if ( field.name == "file" && field.isFile ) 
    {
       file = field;
-      if ( firstFound ) { break; }
-      firstFound = true;
-   }
-   if ( "nodeType" == field.name )
-   {
-      type = field.value;
-      if ( firstFound ) { break; }
-      firstFound = true; 
+      break;
    }
 }
 
@@ -31,26 +24,6 @@ if (file.filename == "")
 }
 else
 {
-   //import/create companyhome
-   importClass(Packages.org.springframework.web.context.ContextLoader);
-   //importClass(Packages.org.alfresco.service.cmr.repository.NodeService);
-   //importClass(Packages.org.alfresco.repo.jscript.ScriptNode);
-   //importClass(Packages.org.alfresco.service.cmr.repository.NodeRef);
-   var ctx = ContextLoader.getCurrentWebApplicationContext();
-   /*
-   var s = ctx.getBean("NodeService", org.alfresco.service.cmr.repository.NodeService);
-   var stores = s.getStores().toArray();
-   var storesNames = [];
-   for (i = 0; i < stores.length; i++) {
-       storesNames[i] = stores[i].protocol;
-   }
-   model.stores = storesNames;
-   */
-   //var companyhome = ctx.getBean("companyhome", 
-   //                               org.alfresco.repo.jscript.ScriptNode);
-   
-   var companyhome = ctx.getBean("companyhome");   
-   
    // create document in company home from uploaded file
    upload = companyhome.createFile(file.filename, type);
    upload.properties.content.guessMimetype(file.filename);
@@ -58,8 +31,8 @@ else
    upload.properties.title = title;
    upload.properties.description = description;
    
-   //upload.properties.nodeType = "smd:Template";
-   //upload.nodeType = "smd:Template";
+   //upload.properties.nodeType = "smd:amwaal";
+   //upload.nodeType = "smd:amwaal";
    
    //Add other Fields
    for each (field in formdata.fields)
