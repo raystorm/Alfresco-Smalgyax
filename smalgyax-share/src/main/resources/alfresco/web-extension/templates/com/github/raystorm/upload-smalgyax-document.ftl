@@ -7,13 +7,17 @@
 
 <@templateBody>
    <@markup id="alf-hd">
+   <!-- add upload-smalgyax-document JS file -->
+   <@script type="text/javascript" group="template-common" 
+            src="/com/github/raystorm/upload-smalgyax-document.js" 
+            />
    <div id="alf-hd">
       <@region scope="global" id="share-header" chromeless="true"/>
    </div>
    </@>
    <@markup id="bd">
     <div id="bd">
-      <h1>Hello, from Samlgyax page test!</h1>
+      <h1>Hello, from Smalgyax page test!</h1>
         
       <#import "/org/alfresco/components/form/form.lib.ftl" as formLib />   
       
@@ -26,7 +30,8 @@
          </div>
       
       <form id="form" method="POST" accept-charset="utf-8" 
-            enctype="multipart/form-data" action="/share/service/hayts" >
+            enctype="multipart/form-data" > 
+            <!--  action="/share/service/hayts" > -->
       
          <!--
          <input id="form-destination" name="alf_destination" type="hidden" 
@@ -57,7 +62,7 @@
         <span class="yui-button yui-submit-button alf-primary-button" 
               id="default-form-submit">
           <span class="first-child">
-            <button type="submit" tabindex="0" id="default-form-submit-button" 
+            <button type="button" tabindex="0" id="default-form-submit-button" 
                     name="submit">Upload</button>
           </span>
         </span>&nbsp;
@@ -71,7 +76,15 @@
       </div>
       
          </form>
-   </div>
+         <div><h2>Testing update after form content</h2></div>   
+         <script type="text/javascript" >
+           //var createForm = Smalgyax.forms.helpers.findCreationForm();
+			
+			  //$(document)
+			  //  .ready($("#default-form-submit-button").on("click", uploadFile));
+			  window.onload(Smalgyax.forms.prepare.addEventHandler());
+         </script>
+      </div>
     </div>
    </@>
 </@>
