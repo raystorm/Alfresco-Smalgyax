@@ -27,7 +27,7 @@ if (file.filename == "")
 else
 {
    // create document in destination or company home, for uploaded file
-   let folder;
+   var folder;
    if ( destination )
    { folder = utils.getNodeFromString(destination) }
    else { folder = companyhome; }
