@@ -6,6 +6,7 @@ var description = args.description;
 var file = null;
 var type = "smd:amwaal";
 var firstFound = false;
+var destination;
 for each (field in formdata.fields)
 {
    if ( field.name == "file" && field.isFile ) 
@@ -13,6 +14,7 @@ for each (field in formdata.fields)
       file = field;
       break;
    }
+   if ( field.name == "alf_destination" ) { destination = field.value; }
 }
 
 // ensure file has been uploaded
@@ -24,8 +26,13 @@ if (file.filename == "")
 }
 else
 {
-   // create document in company home from uploaded file
-   upload = companyhome.createFile(file.filename, type);
+   // create document in destination or company home, for uploaded file
+   let folder;
+   if ( destination )
+   { folder = utils.getNodeFromString(destination) }
+   else { folder = companyhome; }
+   
+   upload = folder.createFile(file.filename, type);
    upload.properties.content.guessMimetype(file.filename);
    upload.properties.content.write(file.content);
    upload.properties.title = title;

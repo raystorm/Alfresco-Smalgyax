@@ -1,0 +1,1 @@
+function main(){var a=page.url.args.destination;model.destination=a}main();

@@ -11,7 +11,7 @@
           <create-content>
             <content id="smd-file" icon="text" type="pagelink"
                      label="create.smdamwaal.menu.item.label" >
-              <param name="page">/upload-smalgyax-document?destination={nodeRef}</param>
+              <param name="page">upload-smalgyax-document?destination={nodeRef}&amp;itemId=smd:amwaal</param>
             </content>
           </create-content>
           <!-- failed form version 
@@ -25,10 +25,7 @@
         </config>
 
         <config evaluator="model-type" condition="smd:amwaal">
-          <forms>          
-            <dependencies>
-              <js src="/set-name-field.js"/>
-            </dependencies>
+          <forms>
             <form>
               <field-visibility>
                 <show id="cm:name"/>

@@ -33,6 +33,13 @@
             enctype="multipart/form-data" > 
             <!--  action="/share/service/hayts" > -->
       
+      <!-- page.url.args.destination -->
+      <#if page?? && page.url?? && page.url.args?? && page.url.args.destination?? 
+        && page.url.args.destination?length &gt; 0>
+         <input id="formId-destination" name="alf_destination" type="hidden" 
+                value="${page.url.args.destination?html}" />
+      </#if>
+      
          <!-- TODO: pass file destination
          <input id="form-destination" name="alf_destination" type="hidden" 
                 value=" $ { form.destination?html } " />

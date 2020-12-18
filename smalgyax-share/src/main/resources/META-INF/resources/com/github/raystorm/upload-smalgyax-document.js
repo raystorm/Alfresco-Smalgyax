@@ -111,6 +111,9 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
           { alert("Document uploaded successfully. " + response); }
           //function to run after success: or failure: 
           //complete: function() { }
+          //TODO: update to offer error reporting after BUILD/DEV Debug
+          error: function (response)
+          { alert("Document failed to Upload! \n" + response); }
       }
    );
    
