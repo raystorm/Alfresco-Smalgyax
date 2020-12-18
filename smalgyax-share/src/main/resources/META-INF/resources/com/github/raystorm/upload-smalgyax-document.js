@@ -64,7 +64,11 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
 {
    "use strict";   
    
-   //TODO: Display modal processing indicator
+   //Display modal processing indicator and disable button
+   //var submitButton = Smalgyax.forms.helpers.findInput("submit");
+   var submitButton = document.getElementById("default-form-submit-button");   
+   submitButton.disabled = true; //disable button
+   $("#ProcessingImage").show(); //Show loading indicator
    
    var documentData = new FormData();
    //documentData.append('file', 
@@ -94,7 +98,7 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
    }
 
    //URL for Custom Alfresco Update Service to injest Amwaal documents
-   var url = Alfresco.constants.PROXY_URI + "hayts"
+   var url = Alfresco.constants.PROXY_URI + "hayts";
    
    //TODO: remove after debug
    //alert("about to AJAX send file w/: " + JSON.stringify(documentData));
@@ -111,17 +115,45 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
           processData: false,
           success: function (response) 
           { 
-            alert("Document uploaded successfully. " + response); 
+            //var parsed = $.parseHTML(response);
+            //var msg = parsed
+            //var msg = $("#message").html(response); 
+            //var msg = $(response).find("#message").text()
+            //there has to be a more robust way to do this
+            var msg = $(response)[3].innerText.trim();
+            alert( "Document uploaded successfully. \n" 
+                 + msg + "\n");
+                 //+ response);
             
             //TODO: hide processing indicator && Re-enable form
             var createForm = Smalgyax.forms.helpers.findCreationForm();
-            createForm.reset(); //clear the form for the next file
+            createForm.reset.click(); //clear the form for the next file
           },
-          //function to run after success: or failure: 
-          //complete: function() { }
           //TODO: update to offer error reporting after BUILD/DEV Debug
           error: function (response, status, errorMsg)
-          { alert("Document failed to Upload! \n" + response); }
+          { 
+             //TODO: get error message from Response Text
+             $("#form-messages").replaceWith($(response.responseText.trim()));
+             var dialog = $("form-messages").dialog({
+                modal: true,
+                autoOpen: true,
+                buttons: [
+                   {
+                     text: "Ok",
+                     click: function() { $( this ).dialog( "close" ); }
+                   }]                   
+              });
+             
+             alert( "Document failed to Upload! \n" 
+                  + JSON.stringify(response) + "\n"
+                  + errorMsg ); 
+          },
+          //run after success: or failure: 
+          complete: function() 
+          {  // enable the button and hide the indicator
+             submitButton.disabled = false; 
+             $("#ProcessingImage").hide();
+          }
       }
    );
    

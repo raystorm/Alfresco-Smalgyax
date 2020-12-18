@@ -36,6 +36,25 @@ else
    upload.properties.content.write(file.content);
    upload.properties.title = title;
    upload.properties.description = description;
+   upload.properties.author = person.name;
+   //special processing for company home?
+   //upload.properties.folder = destination.name
+   upload.properties.folder = destination.properties.name
+   //upload.properties.folder = destination.getDisplayPath();
+   //upload.properties.folder = destination.displayPath;
+   
+   //poor mans human reasable size
+   var unit = [ "bytes", "kb", "mb", "gb", "tb" ];
+   var friendlySize = upload.properties.content.size;
+   var i = 0;
+   for (i=0; i < unit.length; ++i )
+   {
+      if ( friendlySize < 1024 ) { break; }
+      friendlySize = friendlySize / 1024;
+   }
+
+   upload.properties.humanSize = friendlySize;
+   upload.properties.sizeUnit =  unit[i];
    
    //upload.properties.nodeType = "smd:amwaal";
    //upload.nodeType = "smd:amwaal";

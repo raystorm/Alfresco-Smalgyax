@@ -29,6 +29,7 @@
       <form id="form" method="POST" accept-charset="utf-8" 
             enctype="multipart/form-data" > 
             <!--  action="/share/service/hayts" > -->
+            <div id="form-messages" style="display:none"></div>
       
       <!-- page.url.args.destination -->
       <#if page?? && page.url?? && page.url.args?? && page.url.args.destination?? 
@@ -67,7 +68,11 @@
               id="default-form-submit">
           <span class="first-child">
             <button type="button" tabindex="0" id="default-form-submit-button" 
-                    name="submit">Upload</button>
+                    name="submit">
+                    Upload
+              <img id="ProcessingImage" alt="Processing" style="display: none;"
+                   src="/share/res/components/images/lightbox/loading.gif">
+            </button>
           </span>
         </span>&nbsp;
         <span class="yui-button yui-push-button" 
