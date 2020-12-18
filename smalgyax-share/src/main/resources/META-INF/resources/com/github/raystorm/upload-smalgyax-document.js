@@ -83,19 +83,21 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
          case 'file':
            documentData.append(tmpField.name, tmpField.files[0]);
            break;
-         case 'file':
-           documentData.append(tmpField.name, tmpField,value);
+         case 'text':
+         case 'hidden':
+         case 'textarea':
+           documentData.append(tmpField.name, tmpField.value);
            break;
          default:
            //either, button, submit, or unknown, so ignore
       }
    }
 
-   //http://localhost:8080/alfresco/api/-default-/public/alfresco/versions/1/nodes/-root-/children
-   //URL for Alfresco Update Service
-   //var url = Alfresco.constants.PROXY_URI + "api/upload";
-   //var url = Alfresco.constants.PROXY_URI + "api/-default-/public/alfresco/versions/1/nodes/-root-/children";
+   //URL for Custom Alfresco Update Service to injest Amwaal documents
    var url = Alfresco.constants.PROXY_URI + "hayts"
+   
+   //TODO: remove after debug
+   //alert("about to AJAX send file w/: " + JSON.stringify(documentData));
 
    //https://api.jquery.com/Jquery.ajax/Works
    $.ajax({
@@ -108,16 +110,20 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
           //contentType: 'multipart/form-data',
           processData: false,
           success: function (response) 
-          { alert("Document uploaded successfully. " + response); }
+          { 
+            alert("Document uploaded successfully. " + response); 
+            
+            //TODO: hide processing indicator && Re-enable form
+            var createForm = Smalgyax.forms.helpers.findCreationForm();
+            createForm.reset(); //clear the form for the next file
+          },
           //function to run after success: or failure: 
           //complete: function() { }
           //TODO: update to offer error reporting after BUILD/DEV Debug
-          error: function (response)
+          error: function (response, status, errorMsg)
           { alert("Document failed to Upload! \n" + response); }
       }
    );
-   
-   //TODO: hide processing indicator
    
    return false;
 }

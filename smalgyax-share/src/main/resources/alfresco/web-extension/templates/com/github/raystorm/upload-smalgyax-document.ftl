@@ -9,18 +9,15 @@
    <@markup id="alf-hd">
    <!-- add upload-smalgyax-document JS file -->
    <@script type="text/javascript" group="template-common" 
-            src="/com/github/raystorm/upload-smalgyax-document.js" 
-            />
+            src="/com/github/raystorm/upload-smalgyax-document.js" />
    <div id="alf-hd">
       <@region scope="global" id="share-header" chromeless="true"/>
    </div>
    </@>
    <@markup id="bd">
     <div id="bd">
-      <h1>Hello, from Smalgyax page test!</h1>
-        
       <#import "/org/alfresco/components/form/form.lib.ftl" as formLib />   
-      
+
       <#assign formId="form">
       <#assign formUI>true</#assign>
                        
@@ -83,12 +80,8 @@
       </div>
       
          </form>
-         <div><h2>Testing update after form content</h2></div>   
          <script type="text/javascript" >
-           //var createForm = Smalgyax.forms.helpers.findCreationForm();
-			
-			  //$(document)
-			  //  .ready($("#default-form-submit-button").on("click", uploadFile));
+           //wire up the button to submit the form
 			  window.onload(Smalgyax.forms.prepare.addEventHandler());
          </script>
       </div>

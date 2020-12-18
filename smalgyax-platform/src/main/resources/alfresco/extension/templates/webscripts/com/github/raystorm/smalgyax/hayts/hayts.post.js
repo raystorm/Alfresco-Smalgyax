@@ -28,8 +28,7 @@ else
 {
    // create document in destination or company home, for uploaded file
    var folder;
-   if ( destination )
-   { folder = utils.getNodeFromString(destination) }
+   if ( destination ) { folder = utils.getNodeFromString(destination); }
    else { folder = companyhome; }
    
    upload = folder.createFile(file.filename, type);
