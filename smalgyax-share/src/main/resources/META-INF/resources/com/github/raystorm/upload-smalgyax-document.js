@@ -134,7 +134,7 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
           { 
              //TODO: get error message from Response Text
              $("#form-messages").replaceWith($(response.responseText.trim()));
-             var dialog = $("form-messages").dialog({
+             var dialog = $("#form-messages").dialog({
                 modal: true,
                 autoOpen: true,
                 buttons: [
