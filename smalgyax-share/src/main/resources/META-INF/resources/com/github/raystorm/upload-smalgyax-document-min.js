@@ -133,19 +133,22 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
           error: function (response, status, errorMsg)
           { 
              //TODO: get error message from Response Text
-             $("#form-messages").replaceWith($(response.responseText.trim()));
+             var trimmedResponse = response.responseText.trim();
+             trimmedResponse = trimmedResponse.replace(/.*<body>/ms,'<div id="body">');
+             trimmedResponse = trimmedResponse.replace(/<\/body>.*/ms,'</div>');
+             $("#form-messages").replaceWith($(trimmedResponse));
              var dialog = $("#form-messages").dialog({
-                modal: true,
-                autoOpen: true,
+                //modal: true,
+                autoOpen: true /*,
                 buttons: [
                    {
                      text: "Ok",
-                     click: function() { $( this ).dialog( "close" ); }
-                   }]                   
+                     click: function() { $(this).dialog("close"); }
+                   }] */       
               });
              
              alert( "Document failed to Upload! \n" 
-                  + JSON.stringify(response) + "\n"
+                  + trimmedResponse + "\n"
                   + errorMsg ); 
           },
           //run after success: or failure: 

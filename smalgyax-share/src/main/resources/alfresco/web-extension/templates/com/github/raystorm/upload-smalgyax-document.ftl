@@ -3,13 +3,22 @@
 
 
 <@templateHeader>
+  <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" 
+         rel="stylesheet" />
+  <style type="text/css" >
+    table { font-size: 1em; }
+
+   .ui-draggable, .ui-droppable {
+      background-position: top;
+   }       
+  </style>
 </@>
 
 <@templateBody>
    <@markup id="alf-hd">
    <!-- add upload-smalgyax-document JS file -->
    <@script type="text/javascript" group="template-common" 
-            src="/com/github/raystorm/upload-smalgyax-document.js" />
+            src="/com/github/raystorm/upload-smalgyax-document-min.js" />
    <div id="alf-hd">
       <@region scope="global" id="share-header" chromeless="true"/>
    </div>
@@ -29,7 +38,7 @@
       <form id="form" method="POST" accept-charset="utf-8" 
             enctype="multipart/form-data" > 
             <!--  action="/share/service/hayts" > -->
-            <div id="form-messages" style="display:none"></div>
+            <div id="form-messages" style="display:none" title="Upload file result"></div>
       
       <!-- page.url.args.destination -->
       <#if page?? && page.url?? && page.url.args?? && page.url.args.destination?? 
