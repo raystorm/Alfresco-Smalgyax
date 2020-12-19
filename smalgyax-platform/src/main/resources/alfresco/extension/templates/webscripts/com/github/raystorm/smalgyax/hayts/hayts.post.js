@@ -39,9 +39,15 @@ else
    upload.properties.author = person.name;
    //special processing for company home?
    //upload.properties.folder = destination.name
-   upload.properties.folder = destination.properties.name
+   //upload.properties.folder = destination.properties.name
    //upload.properties.folder = destination.getDisplayPath();
    //upload.properties.folder = destination.displayPath;
+   //upload.properties.folder = destination.properties[cm:folder];
+   //upload.properties.folder = destination.getName();
+   //upload.properties.folder = destination.properties.displayPath;
+   //upload.properties.folder = destination.properties["cm:folder"];
+   //upload.properties.folder = JSON.stringify(destination.properties);
+   upload.properties.folder = utils.displayPath(folder);
    
    //poor mans human reasable size
    var unit = [ "bytes", "kb", "mb", "gb", "tb" ];

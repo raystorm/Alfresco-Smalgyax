@@ -57,6 +57,24 @@ Smalgyax.forms.helpers.findFileField = function findFileField(form)
    { if (form.elements[i].type == "file" ) { return form.elements[i]; } }
 };
 
+Smalgyax.forms.event.displayResult = function onClickEvent(response)
+{
+   //prepare response message from Response Text
+   var trimmedResponse = response.replace(/.*<body>/ms,
+                                             '<div id="body">');
+   trimmedResponse = trimmedResponse.replace(/<\/body>.*/ms,'</div>');
+   
+   var msgContainerID = "#form-messages";
+   $(msgContainerID + " > div").replaceWith(trimmedResponse);
+   
+   $(msgContainerID).dialog({
+        modal: true,
+        height: 'auto',
+        width: 'auto',
+        buttons: { Ok: function() { $(this).dialog( "close" ); } }
+     });
+}
+
 /**
  *  function to submit the form    
  */
@@ -113,43 +131,29 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
           contentType: false,
           //contentType: 'multipart/form-data',
           processData: false,
-          success: function (response) 
+          success: function(response) 
           { 
-            //var parsed = $.parseHTML(response);
-            //var msg = parsed
-            //var msg = $("#message").html(response); 
-            //var msg = $(response).find("#message").text()
-            //there has to be a more robust way to do this
-            var msg = $(response)[3].innerText.trim();
-            alert( "Document uploaded successfully. \n" 
-                 + msg + "\n");
+             Smalgyax.forms.event.displayResult(response);
+             
+             //var parsed = $.parseHTML(response);
+             //there has to be a more robust way to do this
+             //var msg = $(response)[3].innerText.trim();
+             //alert( "Document uploaded successfully. \n" + msg + "\n");
                  //+ response);
-            
-            //TODO: hide processing indicator && Re-enable form
-            var createForm = Smalgyax.forms.helpers.findCreationForm();
-            createForm.reset.click(); //clear the form for the next file
+
+             var createForm = Smalgyax.forms.helpers.findCreationForm();
+             createForm.reset.click(); //clear the form for the next file
           },
           //TODO: update to offer error reporting after BUILD/DEV Debug
           error: function (response, status, errorMsg)
           { 
-             //TODO: get error message from Response Text
              var trimmedResponse = response.responseText.trim();
-             trimmedResponse = trimmedResponse.replace(/.*<body>/ms,'<div id="body">');
-             trimmedResponse = trimmedResponse.replace(/<\/body>.*/ms,'</div>');
-             $("#form-messages").replaceWith($(trimmedResponse));
-             var dialog = $("#form-messages").dialog({
-                //modal: true,
-                autoOpen: true /*,
-                buttons: [
-                   {
-                     text: "Ok",
-                     click: function() { $(this).dialog("close"); }
-                   }] */       
-              });
-             
+             Smalgyax.forms.event.displayResult(response);
+             /*
              alert( "Document failed to Upload! \n" 
                   + trimmedResponse + "\n"
-                  + errorMsg ); 
+                  + errorMsg );
+             */ 
           },
           //run after success: or failure: 
           complete: function() 

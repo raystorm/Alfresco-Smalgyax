@@ -8,9 +8,7 @@
   <style type="text/css" >
     table { font-size: 1em; }
 
-   .ui-draggable, .ui-droppable {
-      background-position: top;
-   }       
+    .ui-draggable, .ui-droppable { background-position: top; }       
   </style>
 </@>
 
@@ -38,7 +36,9 @@
       <form id="form" method="POST" accept-charset="utf-8" 
             enctype="multipart/form-data" > 
             <!--  action="/share/service/hayts" > -->
-            <div id="form-messages" style="display:none" title="Upload file result"></div>
+        <div id="form-messages" style="display:none" title="Upload file result">
+          <div>Replace me with an Error Message</div>
+        </div>
       
       <!-- page.url.args.destination -->
       <#if page?? && page.url?? && page.url.args?? && page.url.args.destination?? 
