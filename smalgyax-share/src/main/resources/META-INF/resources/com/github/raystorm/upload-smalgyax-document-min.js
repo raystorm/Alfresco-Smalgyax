@@ -83,14 +83,11 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
    "use strict";   
    
    //Display modal processing indicator and disable button
-   //var submitButton = Smalgyax.forms.helpers.findInput("submit");
    var submitButton = document.getElementById("default-form-submit-button");   
    submitButton.disabled = true; //disable button
    $("#ProcessingImage").show(); //Show loading indicator
    
    var documentData = new FormData();
-   //documentData.append('file', 
-   //                    $('input#file.findDocumentOnboarding')[0].files[0]);
 
    var createForm = Smalgyax.forms.helpers.findCreationForm();
 
@@ -118,7 +115,7 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
    //URL for Custom Alfresco Update Service to injest Amwaal documents
    var url = Alfresco.constants.PROXY_URI + "hayts";
    
-   //TODO: remove after debug
+   //remove after debug
    //alert("about to AJAX send file w/: " + JSON.stringify(documentData));
 
    //https://api.jquery.com/Jquery.ajax/Works
@@ -134,28 +131,17 @@ Smalgyax.forms.event.onClickEvent = function onClickEvent(event)
           success: function(response) 
           { 
              Smalgyax.forms.event.displayResult(response);
-             
-             //var parsed = $.parseHTML(response);
-             //there has to be a more robust way to do this
-             //var msg = $(response)[3].innerText.trim();
-             //alert( "Document uploaded successfully. \n" + msg + "\n");
-                 //+ response);
 
              var createForm = Smalgyax.forms.helpers.findCreationForm();
              createForm.reset.click(); //clear the form for the next file
           },
-          //TODO: update to offer error reporting after BUILD/DEV Debug
           error: function (response, status, errorMsg)
           { 
+             //TODO: offer error reporting after BUILD/DEV Debug
              var trimmedResponse = response.responseText.trim();
-             Smalgyax.forms.event.displayResult(response);
-             /*
-             alert( "Document failed to Upload! \n" 
-                  + trimmedResponse + "\n"
-                  + errorMsg );
-             */ 
+             Smalgyax.forms.event.displayResult(response); 
           },
-          //run after success: or failure: 
+          //run after success: or error: 
           complete: function() 
           {  // enable the button and hide the indicator
              submitButton.disabled = false; 
@@ -173,8 +159,6 @@ Smalgyax.forms.prepare.addEventHandler = function addEventHandler()
    "use strict";
    
    var form = Smalgyax.forms.helpers.findCreationForm();
-   //var contentField = Smalgyax.forms.helpers.findInput(form, "cm_content");
-   //var contentField = Smalgyax.forms.helpers.findInput(form, "files[]");
    var button = Smalgyax.forms.helpers.findInput(form, "submit");
    button.onclick = Smalgyax.forms.event.onClickEvent;
 }

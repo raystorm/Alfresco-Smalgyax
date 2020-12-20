@@ -49,7 +49,7 @@ else
    //upload.properties.folder = JSON.stringify(destination.properties);
    upload.properties.folder = utils.displayPath(folder);
    
-   //poor mans human reasable size
+   //poor mans human readable size
    var unit = [ "bytes", "kb", "mb", "gb", "tb" ];
    var friendlySize = upload.properties.content.size;
    var i = 0;
@@ -61,9 +61,6 @@ else
 
    upload.properties.humanSize = friendlySize;
    upload.properties.sizeUnit =  unit[i];
-   
-   //upload.properties.nodeType = "smd:amwaal";
-   //upload.nodeType = "smd:amwaal";
    
    //Add other Fields
    for each (field in formdata.fields)

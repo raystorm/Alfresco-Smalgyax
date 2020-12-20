@@ -37,7 +37,7 @@
             enctype="multipart/form-data" > 
             <!--  action="/share/service/hayts" > -->
         <div id="form-messages" style="display:none" title="Upload file result">
-          <div>Replace me with an Error Message</div>
+          <div>Replace with an Error Message</div>
         </div>
       
       <!-- page.url.args.destination -->
