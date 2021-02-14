@@ -190,10 +190,17 @@
                     <show id="acme:securityClassification"/>
                     -->                    
                     
-                    <!-- Smalgyax custom props -->
-		              <show id="smd:nahawt" force="true"/>
-		              <show id="smd:magon"  force="true"/>
-		              
+                    <!-- ===================== 
+                         Smalgyax custom props 
+                         ===================== -->
+                    <!-- BC Orthography -->
+                    <show id="smd:nahawt-bc" force="true"/>
+                    <show id="smd:magon-bc"  force="true"/>
+                    
+                    <!-- AK Orthography -->
+                    <show id="smd:nahawt-ak" force="true"/>
+                    <show id="smd:magon-ak"  force="true"/>
+                    
                 </field-visibility>
                 <appearance>
                     <field id="cm:name">
@@ -269,14 +276,29 @@
                     -->
                     <set id="smdAmwaalSet" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal"/>
-                    <field id="smd:nahawt" 
+                    <field id="smd:nahawt-bc" 
                            label-id="form.field.label.smd.nahawt" 
                            set="smdAmwaalSet">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon" 
+                    <field id="smd:magon-bc" 
+                           label-id="form.field.label.smd.magon" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                        <control-param name="activateLinks">true</control-param>
+                      </control>
+                    </field>
+                    <!-- DO I need another set? -->
+                    <field id="smd:nahawt-ak" 
+                           label-id="form.field.label.smd.nahawt" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textfield.ftl">
+                        <control-param name="maxLength">255</control-param>
+                      </control>
+                    </field>
+                    <field id="smd:magon-ak" 
                            label-id="form.field.label.smd.magon" 
                            set="smdAmwaalSet">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -300,8 +322,17 @@
                     <show id="acme:documentId" force="true"/>
                     <show id="acme:securityClassification"/>
                     -->
-                    <show id="smd:nahawt" force="true"/>
-                    <show id="smd:magon"  force="true"/>
+                    
+                    <!-- ===================== 
+                         Smalgyax custom props 
+                         ===================== -->
+                    <!-- BC Orthography -->
+                    <show id="smd:nahawt-bc" force="true"/>
+                    <show id="smd:magon-bc"  force="true"/>
+                    
+                    <!-- AK Orthography -->
+                    <show id="smd:nahawt-ak" force="true"/>
+                    <show id="smd:magon-ak"  force="true"/>
                 </field-visibility>
                 <edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl"/>
                 <appearance>
@@ -345,12 +376,30 @@
                     -->
                     <set id="smdAmwaalSet" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal"/>
-                    <field id="smd:nahawt" 
+                    
+                    <field id="smd:nahawt-bc" 
                            label-id="form.field.label.smd.nahawt" 
                            set="smdAmwaalSet">
-                      <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                      <control template="/org/alfresco/components/form/controls/textfield.ftl">
+                        <control-param name="maxLength">255</control-param>
+                      </control>
                     </field>
-                    <field id="smd:magon" 
+                    <field id="smd:magon-bc" 
+                           label-id="form.field.label.smd.magon" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                        <control-param name="activateLinks">true</control-param>
+                      </control>
+                    </field>
+                    <!-- DO I need another set? -->
+                    <field id="smd:nahawt-ak" 
+                           label-id="form.field.label.smd.nahawt" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textfield.ftl">
+                        <control-param name="maxLength">255</control-param>
+                      </control>
+                    </field>
+                    <field id="smd:magon-ak" 
                            label-id="form.field.label.smd.magon" 
                            set="smdAmwaalSet">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -372,8 +421,18 @@
                     <show id="acme:documentId" force="true"/>
                     <show id="acme:securityClassification"/>
                     -->
-                    <show id="smd:nahawt" force="true"/>
-                    <show id="smd:magon"  force="true"/>
+                    
+                    <!-- ===================== 
+                         Smalgyax custom props 
+                         ===================== -->
+                    <!-- BC Orthography -->
+                    <show id="smd:nahawt-bc" force="true"/>
+                    <show id="smd:magon-bc"  force="true"/>
+                    
+                    <!-- AK Orthography -->
+                    <show id="smd:nahawt-ak" force="true"/>
+                    <show id="smd:magon-ak"  force="true"/>
+                    
                 </field-visibility>
                 <appearance>
                     <field id="cm:name">
@@ -405,12 +464,30 @@
                     -->
                     <set id="smdAmwaalSet" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal"/>
-                    <field id="smd:nahawt" 
+                    
+                    <field id="smd:nahawt-bc" 
                            label-id="form.field.label.smd.nahawt" 
                            set="smdAmwaalSet">
-                      <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                      <control template="/org/alfresco/components/form/controls/textfield.ftl">
+                        <control-param name="maxLength">255</control-param>
+                      </control>
                     </field>
-                    <field id="smd:magon" 
+                    <field id="smd:magon-bc" 
+                           label-id="form.field.label.smd.magon" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                        <control-param name="activateLinks">true</control-param>
+                      </control>
+                    </field>
+                    <!-- DO I need another set? -->
+                    <field id="smd:nahawt-ak" 
+                           label-id="form.field.label.smd.nahawt" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textfield.ftl">
+                        <control-param name="maxLength">255</control-param>
+                      </control>
+                    </field>
+                    <field id="smd:magon-ak" 
                            label-id="form.field.label.smd.magon" 
                            set="smdAmwaalSet">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -447,8 +524,18 @@
                   <show id="acme:documentId" force="true"/>
                   <show id="acme:securityClassification"/>
                   -->
-                  <show id="smd:nahawt" force="true"/>
-                  <show id="smd:magon"  force="true"/>
+                  
+                  <!-- ===================== 
+                       Smalgyax custom props 
+                       ===================== -->
+                  <!-- BC Orthography -->
+                  <show id="smd:nahawt-bc" force="true"/>
+                  <show id="smd:magon-bc"  force="true"/>
+                  
+                  <!-- AK Orthography -->
+                  <show id="smd:nahawt-ak" force="true"/>
+                  <show id="smd:magon-ak"  force="true"/>
+                  
                 </field-visibility>
                 <appearance>
                     <field id="cm:name" >
@@ -492,12 +579,30 @@
                     -->
                     <set id="smdAmwaalSet" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal"/>
-                    <field id="smd:nahawt" 
+                    
+                    <field id="smd:nahawt-bc" 
                            label-id="form.field.label.smd.nahawt" 
                            set="smdAmwaalSet">
-                      <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                      <control template="/org/alfresco/components/form/controls/textfield.ftl">
+                        <control-param name="maxLength">255</control-param>
+                      </control>
                     </field>
-                    <field id="smd:magon" 
+                    <field id="smd:magon-bc" 
+                           label-id="form.field.label.smd.magon" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                        <control-param name="activateLinks">true</control-param>
+                      </control>
+                    </field>
+                    <!-- DO I need another set? -->
+                    <field id="smd:nahawt-ak" 
+                           label-id="form.field.label.smd.nahawt" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textfield.ftl">
+                        <control-param name="maxLength">255</control-param>
+                      </control>
+                    </field>
+                    <field id="smd:magon-ak" 
                            label-id="form.field.label.smd.magon" 
                            set="smdAmwaalSet">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -520,8 +625,18 @@
                     <show id="acme:documentId" force="true"/>
                     <show id="acme:securityClassification"/>
                     -->
-                    <show id="smd:nahawt" force="true"/>
-                    <show id="smd:magon"  force="true"/>
+                    
+                    <!-- ===================== 
+                         Smalgyax custom props 
+                         ===================== -->
+                    <!-- BC Orthography -->
+                    <show id="smd:nahawt-bc" force="true"/>
+                    <show id="smd:magon-bc"  force="true"/>
+                    
+                    <!-- AK Orthography -->
+                    <show id="smd:nahawt-ak" force="true"/>
+                    <show id="smd:magon-ak"  force="true"/>
+                    
                 </field-visibility>
                 <appearance>
                     <field id="mimetype">
@@ -545,15 +660,30 @@
                            set="acmeDocSet"/>
                     -->
                     <set id="smdAmwaalSet" appearance="bordered-panel" 
-                         label-id="form.set.label.smd.amwaal"/>
-                    <field id="smd:nahawt" 
+                         label-id="form.set.label.smd.amwaal"/>                    
+                    <field id="smd:nahawt-bc" 
                            label-id="form.field.label.smd.nahawt" 
                            set="smdAmwaalSet">
-                      <control template="/org/alfresco/components/form/controls/textfield.ftl" >
-                        <control-param name="forceEditable">true</control-param>
+                      <control template="/org/alfresco/components/form/controls/textfield.ftl">
+                        <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon" 
+                    <field id="smd:magon-bc" 
+                           label-id="form.field.label.smd.magon" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textarea.ftl">
+                        <control-param name="activateLinks">true</control-param>
+                      </control>
+                    </field>
+                    <!-- DO I need another set? -->
+                    <field id="smd:nahawt-ak" 
+                           label-id="form.field.label.smd.nahawt" 
+                           set="smdAmwaalSet">
+                      <control template="/org/alfresco/components/form/controls/textfield.ftl">
+                        <control-param name="maxLength">255</control-param>
+                      </control>
+                    </field>
+                    <field id="smd:magon-ak" 
                            label-id="form.field.label.smd.magon" 
                            set="smdAmwaalSet">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">

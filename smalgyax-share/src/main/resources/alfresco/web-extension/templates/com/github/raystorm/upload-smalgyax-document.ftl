@@ -65,11 +65,22 @@
             <!-- mimetype is calculated in the back-end from the file -->
             <!-- TODO: Add other Fields Here. -->
             <input name="nodeType" type="hidden" value="smd:amwaal" />
-            Nahawt (Title/Topic) <input name="smd:nahawt" /><br/> 
+            <p>
+            <strong>BC Orthography</strong><br/>
+            Nahawt (Title/Topic) <input name="smd:nahawt-bc" /><br/> 
             Magon (Description) 
-            <textarea id="default_prop_smd_magon" name="smd:magon" 
+            <textarea id="default_prop_smd_magon" name="smd:magon-bc" 
                       rows="3" cols="60" tabindex="0" 
                       title="Ts'aaw Magon" maxlength="1024"></textarea></br>
+            </p>
+            <p>
+            <strong>AK Orthography</strong><br/>
+            Nahawt (Title/Topic) <input name="smd:nahawt-ak" /><br/> 
+            Magon (Description) 
+            <textarea id="default_prop_smd_magon" name="smd:magon-ak" 
+                      rows="3" cols="60" tabindex="0" 
+                      title="Ts'aaw Magon" maxlength="1024"></textarea></br>
+            </p>
          </div>
       
       <div id="default-form-buttons" class="form-buttons">

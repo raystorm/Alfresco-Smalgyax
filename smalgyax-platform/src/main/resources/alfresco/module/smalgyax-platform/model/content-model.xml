@@ -41,12 +41,12 @@ Stem with modifying proclitic composed of: am=1  serving for, waal  do/be
 common noun. valuables; wealth</description>
             <parent>cm:content</parent>
             
+            <!-- BC Orthography  -->
             <properties>
-                <property name="smd:nahawt">
+                <property name="smd:nahawt-bc">
                   <title>nahawt</title>
                   <description>Smalgyax Description of the file content
-
-Nahawt - Topic</description>
+Nahawt - Topic  BC Orthography</description>
                   <type>d:text</type>
                   <mandatory>false</mandatory>
                   <index enabled="true">
@@ -54,10 +54,10 @@ Nahawt - Topic</description>
                     <facetable>false</facetable>
                   </index>
                 </property>
-                <property name="smd:magon">
+                <property name="smd:magon-bc">
                   <title>magon</title>
                   <description>Smalgyax Description of the file content
-magon (underline g) - explain</description>
+Magon (underline g) - explain  BC Orthography</description>
                   <type>d:text</type>
                   <mandatory>false</mandatory>
                   <index enabled="true">
@@ -65,6 +65,31 @@ magon (underline g) - explain</description>
                     <facetable>false</facetable>
                   </index>
                 </property>
+                
+                <!-- AK Orthography -->
+                <property name="smd:nahawt-ak">
+                  <title>nahawt</title>
+                  <description>Smalgyax Description of the file content
+Nahawt - Topic  AK Orthography</description>
+                  <type>d:text</type>
+                  <mandatory>false</mandatory>
+                  <index enabled="true">
+                    <tokenised>TRUE</tokenised>
+                    <facetable>false</facetable>
+                  </index>
+                </property>
+                <property name="smd:magon-ak">
+                  <title>magon</title>
+                  <description>Smalgyax Description of the file content
+Magon (underline g) - explain  AK Orthography</description>
+                  <type>d:text</type>
+                  <mandatory>false</mandatory>
+                  <index enabled="true">
+                    <tokenised>TRUE</tokenised>
+                    <facetable>false</facetable>
+                  </index>
+                </property>
+                
             </properties>
             <associations/>
             <overrides/>

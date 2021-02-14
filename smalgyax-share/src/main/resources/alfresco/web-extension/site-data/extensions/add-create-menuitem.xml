@@ -29,12 +29,14 @@
             <form>
               <field-visibility>
                 <show id="cm:name"/>
-                <show id="cm:content" force="true"/>
-                <show id="cm:title" force="true"/>
-                <show id="mimetype"/>
-                <show id="smd:nahawt" force="true"/>
+                <show id="cm:content"     force="true"/>
+                <show id="cm:title"       force="true"/>
+                <show id="mimetype"                   />
+                <show id="smd:nahawt-bc"  force="true"/>
+                <show id="smd:nahawt-ak"  force="true"/>
                 <show id="cm:description" force="true"/>
-                <show id="smd:magon"  force="true"/>
+                <show id="smd:magon-bc"   force="true"/>
+                <show id="smd:magon-ak"   force="true"/>
                 <show id="app:editInline" force="true"/>
               </field-visibility>
               <appearance>
@@ -56,13 +58,19 @@
                     <control-param name="contextProperty">mimeType</control-param>
                   </control>
                 </field>
-                <field id="smd:nahawt">
+                <field id="smd:nahawt-bc">
+                  <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+                </field>
+                <field id="smd:nahawt-ak">
                   <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
                 </field>
                 <field id="cm:description">
                   <control template="/org/alfresco/components/form/controls/textarea.ftl"/>
                 </field>
-                <field id="smd:magon">
+                <field id="smd:magon-bc">
+                  <control template="/org/alfresco/components/form/controls/textarea.ftl"/>
+                </field>
+                <field id="smd:magon-ak">
                   <control template="/org/alfresco/components/form/controls/textarea.ftl"/>
                 </field>
                 <field id="app:editInline">

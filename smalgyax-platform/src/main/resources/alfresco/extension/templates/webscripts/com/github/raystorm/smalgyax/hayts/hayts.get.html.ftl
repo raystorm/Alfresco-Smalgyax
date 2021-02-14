@@ -10,8 +10,11 @@
         <show id="mimetype"/>
         <show id="app:editInline" force="true"/>
 
-        <show id="smd:nahawt" force="true"/>
-        <show id="smd:magon"  force="true"/>
+        <show id="smd:nahawt-bc" force="true"/>
+        <show id="smd:magon-bc"  force="true"/>
+        
+        <show id="smd:nahawt-ak" force="true"/>
+        <show id="smd:magon-ak"  force="true"/>
       -->
       File: <input type="file" name="file"><br>
       <!-- name is set in the back-end from the file name  -->      
@@ -20,9 +23,17 @@
       <!-- mimetype is calculated in the back-end from the file -->
       <!-- TODO: Add other Fields Here. -->
       <input name="nodeType" type="hidden" value="smd:amwaal">
-      Nahawt (Title/Topic) <input name="smd:nahawt"><br> 
-      Magon  (Description) <input name="smd:magon"><br> 
-      <input type="submit" name="submit" value="Upload">
+      <p>
+      <strong>BC Orthography</strong><br>
+      Nahawt (Title/Topic) <input name="smd:nahawt-bc"><br> 
+      Magon  (Description) <input name="smd:magon-bc"><br> 
+      </p>
+      <p>
+      <strong>AK Orthography</strong><br>
+      Nahawt (Title/Topic) <input name="smd:nahawt-ak"><br> 
+      Magon  (Description) <input name="smd:magon-ak"><br> 
+      </p>
+      <input type="submit" name="submit" value="Upload">      
     </form>
   </body>
 </html>
