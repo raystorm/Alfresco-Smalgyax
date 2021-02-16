@@ -66,7 +66,7 @@
             <!-- TODO: Add other Fields Here. -->
             <input name="nodeType" type="hidden" value="smd:amwaal" />
             <p>
-            <strong>BC Orthography</strong><br/>
+            <h2><strong>BC Orthography</strong></h2><br/>
             Nahawt (Title/Topic) <input name="smd:nahawt-bc" /><br/> 
             Magon (Description) 
             <textarea id="default_prop_smd_magon" name="smd:magon-bc" 
@@ -74,7 +74,7 @@
                       title="Ts'aaw Magon" maxlength="1024"></textarea></br>
             </p>
             <p>
-            <strong>AK Orthography</strong><br/>
+            <h2><strong>AK Orthography</strong></h2><br/>
             Nahawt (Title/Topic) <input name="smd:nahawt-ak" /><br/> 
             Magon (Description) 
             <textarea id="default_prop_smd_magon" name="smd:magon-ak" 

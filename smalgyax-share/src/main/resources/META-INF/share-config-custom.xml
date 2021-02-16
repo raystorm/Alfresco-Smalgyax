@@ -216,18 +216,6 @@
                         <control-param name="activateLinks">true</control-param>
                       </control>
                     </field>
-                    <!-- 
-	                <field id="smd:nahwat" label-id="form.field.label.smd.nahwat">
-	                  <control template="/org/alfresco/components/form/controls/textfield.ftl">
-	                    <control-param name="maxLength">255</control-param>
-	                  </control>
-	                </field>
-	                <field id="smd:magon" label-id="form.field.label.smd.magon">	                  
-                     <control template="/org/alfresco/components/form/controls/textarea.ftl" >
-                         <control-param name="activateLinks">true</control-param>
-                     </control>
-	                </field>
-                   -->
                     <set id="cm:content2cols" 
                          template="/org/alfresco/components/form/2-column-set.ftl"/>
 
@@ -274,33 +262,35 @@
                            label-id="form.field.label.acme.securityClassification"
                            set="acmeDocSet"/>
                     -->
-                    <set id="smdAmwaalSet" appearance="bordered-panel" 
-                         label-id="form.set.label.smd.amwaal"/>
+                    <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.bc" />
                     <field id="smd:nahawt-bc" 
                            label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-bc" 
                            label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
                     </field>
                     <!-- DO I need another set? -->
+                    <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.ak" />
                     <field id="smd:nahawt-ak" 
-                           label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.nahawt.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-ak" 
-                           label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.magon.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
@@ -374,34 +364,35 @@
                            label-id="form.field.label.acme.securityClassification"
                            set="acmeDocSet"/>
                     -->
-                    <set id="smdAmwaalSet" appearance="bordered-panel" 
-                         label-id="form.set.label.smd.amwaal"/>
-                    
+                    <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.bc" />
                     <field id="smd:nahawt-bc" 
-                           label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.nahawt.bc" 
+                           set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-bc" 
-                           label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.magon.bc" 
+                           set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
                     </field>
                     <!-- DO I need another set? -->
+                    <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.ak" />
                     <field id="smd:nahawt-ak" 
-                           label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.nahawt.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-ak" 
-                           label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.magon.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
@@ -462,34 +453,34 @@
                            label-id="form.field.label.acme.securityClassification"
                            set="acmeDocSet"/>
                     -->
-                    <set id="smdAmwaalSet" appearance="bordered-panel" 
-                         label-id="form.set.label.smd.amwaal"/>
-                    
+                    <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.bc" />
                     <field id="smd:nahawt-bc" 
-                           label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.nahawt.bc" 
+                           set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-bc" 
-                           label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.magon.bc" 
+                           set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
                     </field>
-                    <!-- DO I need another set? -->
+                    <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.ak" />
                     <field id="smd:nahawt-ak" 
-                           label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.nahawt.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-ak" 
-                           label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.magon.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
@@ -552,10 +543,10 @@
                         </control>
                     </field>
                     <field id="cm:content" label-id="" mandatory="true">
-						    <constraint-handlers>
-						      <constraint type="MANDATORY" event="input"
-						                  validation-handler="Smalgyax.forms.validation.setNameValue" />
-						    </constraint-handlers>
+                      <constraint-handlers>
+                        <constraint type="MANDATORY" event="input"
+                                    validation-handler="Smalgyax.forms.validation.setNameValue" />
+                      </constraint-handlers>
                         <control template="/file.ftl">
                           <control-param name="editorAppearance">explorer</control-param>                      
                         </control>
@@ -577,34 +568,35 @@
                            label-id="form.field.label.acme.securityClassification"
                            set="acmeDocSet"/>
                     -->
-                    <set id="smdAmwaalSet" appearance="bordered-panel" 
-                         label-id="form.set.label.smd.amwaal"/>
-                    
+                    <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.bc" />
                     <field id="smd:nahawt-bc" 
-                           label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.nahawt.bc" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-bc" 
-                           label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.magon.bc" 
+                           set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
                     </field>
                     <!-- DO I need another set? -->
+                    <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.ak" />
                     <field id="smd:nahawt-ak" 
-                           label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.nahawt.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-ak" 
-                           label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.magon.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
@@ -659,33 +651,35 @@
                     <field id="acme:securityClassification" label-id="form.field.label.acme.securityClassification"
                            set="acmeDocSet"/>
                     -->
-                    <set id="smdAmwaalSet" appearance="bordered-panel" 
-                         label-id="form.set.label.smd.amwaal"/>                    
+                    <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.bc" />
                     <field id="smd:nahawt-bc" 
-                           label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.nahawt.bc" 
+                           set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-bc" 
-                           label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.magon.bc" 
+                           set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
                     </field>
                     <!-- DO I need another set? -->
+                    <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
+                         label-id="form.set.label.smd.amwaal.ak" />
                     <field id="smd:nahawt-ak" 
-                           label-id="form.field.label.smd.nahawt" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.nahaw.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
                     <field id="smd:magon-ak" 
-                           label-id="form.field.label.smd.magon" 
-                           set="smdAmwaalSet">
+                           label-id="form.field.label.smd.magon.ak" 
+                           set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
                         <control-param name="activateLinks">true</control-param>
                       </control>
