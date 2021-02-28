@@ -194,12 +194,12 @@
                          Smalgyax custom props 
                          ===================== -->
                     <!-- BC Orthography -->
-                    <show id="smd:nahawt-bc" force="true"/>
-                    <show id="smd:magon-bc"  force="true"/>
+                    <show id="smd:nahawtBC" force="true"/>
+                    <show id="smd:magonBC"  force="true"/>
                     
                     <!-- AK Orthography -->
-                    <show id="smd:nahawt-ak" force="true"/>
-                    <show id="smd:magon-ak"  force="true"/>
+                    <show id="smd:nahawtAK" force="true"/>
+                    <show id="smd:magonAK"  force="true"/>
                     
                 </field-visibility>
                 <appearance>
@@ -264,14 +264,14 @@
                     -->
                     <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.bc" />
-                    <field id="smd:nahawt-bc" 
+                    <field id="smd:nahawtBC"
                            label-id="form.field.label.smd.nahawt" 
                            set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon-bc" 
+                    <field id="smd:magonBC"
                            label-id="form.field.label.smd.magon" 
                            set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -281,14 +281,14 @@
                     <!-- DO I need another set? -->
                     <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.ak" />
-                    <field id="smd:nahawt-ak" 
+                    <field id="smd:nahawtAK"
                            label-id="form.field.label.smd.nahawt.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon-ak" 
+                    <field id="smd:magonAK"
                            label-id="form.field.label.smd.magon.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -317,12 +317,12 @@
                          Smalgyax custom props 
                          ===================== -->
                     <!-- BC Orthography -->
-                    <show id="smd:nahawt-bc" force="true"/>
-                    <show id="smd:magon-bc"  force="true"/>
+                    <show id="smd:nahawtBC" force="true"/>
+                    <show id="smd:magonBC"  force="true"/>
                     
                     <!-- AK Orthography -->
-                    <show id="smd:nahawt-ak" force="true"/>
-                    <show id="smd:magon-ak"  force="true"/>
+                    <show id="smd:nahawtAK" force="true"/>
+                    <show id="smd:magonAK"  force="true"/>
                 </field-visibility>
                 <edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl"/>
                 <appearance>
@@ -366,14 +366,14 @@
                     -->
                     <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.bc" />
-                    <field id="smd:nahawt-bc" 
+                    <field id="smd:nahawtBC"
                            label-id="form.field.label.smd.nahawt.bc" 
                            set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon-bc" 
+                    <field id="smd:magonBC"
                            label-id="form.field.label.smd.magon.bc" 
                            set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -383,14 +383,14 @@
                     <!-- DO I need another set? -->
                     <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.ak" />
-                    <field id="smd:nahawt-ak" 
+                    <field id="smd:nahawtAK"
                            label-id="form.field.label.smd.nahawt.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon-ak" 
+                    <field id="smd:magonAK"
                            label-id="form.field.label.smd.magon.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -417,12 +417,12 @@
                          Smalgyax custom props 
                          ===================== -->
                     <!-- BC Orthography -->
-                    <show id="smd:nahawt-bc" force="true"/>
-                    <show id="smd:magon-bc"  force="true"/>
+                    <show id="smd:nahawtBC" force="true"/>
+                    <show id="smd:magonBC"  force="true"/>
                     
                     <!-- AK Orthography -->
-                    <show id="smd:nahawt-ak" force="true"/>
-                    <show id="smd:magon-ak"  force="true"/>
+                    <show id="smd:nahawtAK" force="true"/>
+                    <show id="smd:magonAK"  force="true"/>
                     
                 </field-visibility>
                 <appearance>
@@ -455,14 +455,14 @@
                     -->
                     <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.bc" />
-                    <field id="smd:nahawt-bc" 
+                    <field id="smd:nahawtBC"
                            label-id="form.field.label.smd.nahawt.bc" 
                            set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon-bc" 
+                    <field id="smd:magonBC"
                            label-id="form.field.label.smd.magon.bc" 
                            set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -471,14 +471,14 @@
                     </field>
                     <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.ak" />
-                    <field id="smd:nahawt-ak" 
+                    <field id="smd:nahawtAK"
                            label-id="form.field.label.smd.nahawt.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon-ak" 
+                    <field id="smd:magonAK"
                            label-id="form.field.label.smd.magon.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -520,12 +520,12 @@
                        Smalgyax custom props 
                        ===================== -->
                   <!-- BC Orthography -->
-                  <show id="smd:nahawt-bc" force="true"/>
-                  <show id="smd:magon-bc"  force="true"/>
+                  <show id="smd:nahawtBC" force="true"/>
+                  <show id="smd:magonBC"  force="true"/>
                   
                   <!-- AK Orthography -->
-                  <show id="smd:nahawt-ak" force="true"/>
-                  <show id="smd:magon-ak"  force="true"/>
+                  <show id="smd:nahawtAK" force="true"/>
+                  <show id="smd:magonAK"  force="true"/>
                   
                 </field-visibility>
                 <appearance>
@@ -570,7 +570,7 @@
                     -->
                     <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.bc" />
-                    <field id="smd:nahawt-bc" 
+                    <field id="smd:nahawtBC"
                            label-id="form.field.label.smd.nahawt.bc" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
@@ -587,14 +587,14 @@
                     <!-- DO I need another set? -->
                     <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.ak" />
-                    <field id="smd:nahawt-ak" 
+                    <field id="smd:nahawtAK"
                            label-id="form.field.label.smd.nahawt.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon-ak" 
+                    <field id="smd:magonAK"
                            label-id="form.field.label.smd.magon.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -622,12 +622,12 @@
                          Smalgyax custom props 
                          ===================== -->
                     <!-- BC Orthography -->
-                    <show id="smd:nahawt-bc" force="true"/>
+                    <show id="smd:nahawtBC" force="true"/>
                     <show id="smd:magon-bc"  force="true"/>
                     
                     <!-- AK Orthography -->
-                    <show id="smd:nahawt-ak" force="true"/>
-                    <show id="smd:magon-ak"  force="true"/>
+                    <show id="smd:nahawtAK" force="true"/>
+                    <show id="smd:magonAK"  force="true"/>
                     
                 </field-visibility>
                 <appearance>
@@ -653,7 +653,7 @@
                     -->
                     <set id="smdAmwaalSet-bc" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.bc" />
-                    <field id="smd:nahawt-bc" 
+                    <field id="smd:nahawtBC"
                            label-id="form.field.label.smd.nahawt.bc" 
                            set="smdAmwaalSet-bc">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
@@ -670,14 +670,14 @@
                     <!-- DO I need another set? -->
                     <set id="smdAmwaalSet-ak" appearance="bordered-panel" 
                          label-id="form.set.label.smd.amwaal.ak" />
-                    <field id="smd:nahawt-ak" 
-                           label-id="form.field.label.smd.nahaw.ak" 
+                    <field id="smd:nahawtAK"
+                           label-id="form.field.label.smd.nahawt.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textfield.ftl">
                         <control-param name="maxLength">255</control-param>
                       </control>
                     </field>
-                    <field id="smd:magon-ak" 
+                    <field id="smd:magonAK"
                            label-id="form.field.label.smd.magon.ak" 
                            set="smdAmwaalSet-ak">
                       <control template="/org/alfresco/components/form/controls/textarea.ftl">

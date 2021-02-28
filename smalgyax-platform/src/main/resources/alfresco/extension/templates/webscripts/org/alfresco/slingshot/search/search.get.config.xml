@@ -1,0 +1,9 @@
+<search>
+   <default-operator>AND</default-operator>
+   <default-query-template>%
+   (cm:name cm:title cm:description ia:whatEvent ia:descriptionEvent
+    lnk:title lnk:description
+    smd:nahawtBC smd:magonBC smd:nahawtAK smd:magonAK
+    TEXT TAG)
+   </default-query-template>
+</search>

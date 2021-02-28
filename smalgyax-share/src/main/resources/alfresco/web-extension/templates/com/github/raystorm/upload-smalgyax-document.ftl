@@ -67,17 +67,17 @@
             <input name="nodeType" type="hidden" value="smd:amwaal" />
             <p>
             <h2><strong>BC Orthography</strong></h2><br/>
-            Nahawt (Title/Topic) <input name="smd:nahawt-bc" /><br/> 
+            Nahawt (Title/Topic) <input name="smd:nahawtBC" /><br/>
             Magon (Description) 
-            <textarea id="default_prop_smd_magon" name="smd:magon-bc" 
+            <textarea id="default_prop_smd_magon" name="smd:magonBC"
                       rows="3" cols="60" tabindex="0" 
                       title="Ts'aaw Magon" maxlength="1024"></textarea></br>
             </p>
             <p>
             <h2><strong>AK Orthography</strong></h2><br/>
-            Nahawt (Title/Topic) <input name="smd:nahawt-ak" /><br/> 
+            Nahawt (Title/Topic) <input name="smd:nahawtAK" /><br/>
             Magon (Description) 
-            <textarea id="default_prop_smd_magon" name="smd:magon-ak" 
+            <textarea id="default_prop_smd_magon" name="smd:magonAK"
                       rows="3" cols="60" tabindex="0" 
                       title="Ts'aaw Magon" maxlength="1024"></textarea></br>
             </p>

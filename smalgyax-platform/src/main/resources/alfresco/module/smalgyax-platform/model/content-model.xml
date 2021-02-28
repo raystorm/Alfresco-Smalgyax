@@ -43,7 +43,7 @@ common noun. valuables; wealth</description>
             
             <!-- BC Orthography  -->
             <properties>
-                <property name="smd:nahawt-bc">
+                <property name="smd:nahawtBC">
                   <title>nahawt - BC</title>
                   <description>Smalgyax Description of the file content
 Nahawt - Topic  BC Orthography</description>
@@ -54,7 +54,7 @@ Nahawt - Topic  BC Orthography</description>
                     <facetable>false</facetable>
                   </index>
                 </property>
-                <property name="smd:magon-bc">
+                <property name="smd:magonBC">
                   <title>magon - BC</title>
                   <description>Smalgyax Description of the file content
 Magon (underline g) - explain  BC Orthography</description>
@@ -67,7 +67,7 @@ Magon (underline g) - explain  BC Orthography</description>
                 </property>
                 
                 <!-- AK Orthography -->
-                <property name="smd:nahawt-ak">
+                <property name="smd:nahawtAK">
                   <title>nahawt - AK</title>
                   <description>Smalgyax Description of the file content
 Nahawt - Topic  AK Orthography</description>
@@ -78,7 +78,7 @@ Nahawt - Topic  AK Orthography</description>
                     <facetable>false</facetable>
                   </index>
                 </property>
-                <property name="smd:magon-ak">
+                <property name="smd:magonAK">
                   <title>magon - AK</title>
                   <description>Smalgyax Description of the file content
 Magon (underline g) - explain  AK Orthography</description>

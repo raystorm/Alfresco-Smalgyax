@@ -10,11 +10,11 @@
         <show id="mimetype"/>
         <show id="app:editInline" force="true"/>
 
-        <show id="smd:nahawt-bc" force="true"/>
-        <show id="smd:magon-bc"  force="true"/>
+        <show id="smd:nahawtBC" force="true"/>
+        <show id="smd:magonBC"  force="true"/>
         
-        <show id="smd:nahawt-ak" force="true"/>
-        <show id="smd:magon-ak"  force="true"/>
+        <show id="smd:nahawtAK" force="true"/>
+        <show id="smd:magonAK"  force="true"/>
       -->
       File: <input type="file" name="file"><br>
       <!-- name is set in the back-end from the file name  -->      
@@ -25,13 +25,13 @@
       <input name="nodeType" type="hidden" value="smd:amwaal">
       <p>
       <strong>BC Orthography</strong><br>
-      Nahawt (Title/Topic) <input name="smd:nahawt-bc"><br> 
-      Magon  (Description) <input name="smd:magon-bc"><br> 
+      Nahawt (Title/Topic) <input name="smd:nahawtBC"><br>
+      Magon  (Description) <input name="smd:magonBC"><br>
       </p>
       <p>
       <strong>AK Orthography</strong><br>
-      Nahawt (Title/Topic) <input name="smd:nahawt-ak"><br> 
-      Magon  (Description) <input name="smd:magon-ak"><br> 
+      Nahawt (Title/Topic) <input name="smd:nahawtAK"><br>
+      Magon  (Description) <input name="smd:magonAK"><br>
       </p>
       <input type="submit" name="submit" value="Upload">      
     </form>
